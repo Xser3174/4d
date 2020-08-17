@@ -11,8 +11,8 @@
 	<div class="col-sm-6 center">  
 	<div class="form-group"> 
 
-		<table>	
-			<thread>
+		<table class="table">	
+			<thread class="thead-grey">
 					<tr>
 						<th scope="">Id</th>
 						<th scope="">Date</th>
@@ -30,7 +30,7 @@
 				<td>{{$row->cname}}</td>
 				<td>{{$row->num}}</td>
 				<td>{{$row->amount}}</td>
-				<td><a href="resource/view/edit.blade.php".{{$row->id}}>Edit</a></td>
+				<td><a href="{{route('intern.editer',$row->id)}}">Edit</a></td>
 			</tr>
 			@endforeach
 		</table>

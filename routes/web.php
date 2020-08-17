@@ -158,6 +158,8 @@ Route::resource('intern', 'InternController', [
     'names' => [
         'index' => 'intern',
         'store' => 'intern.store',
+        'edit' => 'intern.editer',
+        'update' => 'intern.update',
         
     ]
 ]);

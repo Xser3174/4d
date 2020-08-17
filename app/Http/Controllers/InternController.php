@@ -15,8 +15,6 @@ class InternController extends Controller
     public function index()
     {
         //
-        
-       //return view('lotteryRegister');
        $show=blah::all();
         return view('showRegister',compact('show'));
     }
@@ -67,9 +65,15 @@ class InternController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit ($id)
     {
-        //
+        
+        $update=blah::find($id);
+        
+        //dd($update);
+        return view('editer',compact("update"));
+        
+
     }
 
     /**
@@ -82,6 +86,14 @@ class InternController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $update=blah::find($id);
+        $update->dd=request('dd');
+        $update->name=request('cname');
+        $update->num=request('num');
+        $update->amount=request('amount');
+        $update.save();
+        return redirect()->route('intern');
+        
     }
 
     /**
